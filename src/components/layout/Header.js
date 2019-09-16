@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom'
 function Header() {
   return (
     <header style={headerStyle}>
-      <h1>Employee Name List</h1>
       <Link style={linkStyle} to='/'>
         Home
       </Link>{' '}
       |{' '}
-      <Link style={linkStyle} to='/about'>
-        About
+      <Link style={linkStyle} to='/saleinput'>
+        Sale Input
       </Link>
     </header>
   )

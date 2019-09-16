@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Card, CardBody, CardTitle, Button } from 'reactstrap'
 
 export class AddEmp extends Component {
   state = {
@@ -14,16 +15,19 @@ export class AddEmp extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} style={{ display: 'flex' }}>
+      <form style={{ display: 'flex' }}>
         <input
           type='text'
           name='title'
           placeholder='Add New'
-          style={{ flex: '10', padding: '10px' }}
+          style={{ flex: '5', padding: '10px' }}
           value={this.state.title}
           onChange={this.onChange}
         />
-        <input type='submit' value='Add' className='btn' />
+        <Button color='primary' size='sm' onClick={this.onSubmit}>
+          Add
+        </Button>
+        {/* <input type='submit' value='Add' className='btn' /> */}
       </form>
     )
   }

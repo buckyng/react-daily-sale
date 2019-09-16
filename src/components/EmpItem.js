@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
+import { Card, CardBody, CardTitle, Button } from 'reactstrap'
 export class EmpItem extends Component {
   render() {
     const { id, title } = this.props.empItem
     return (
-      <div style={itemStyle}>
-        <p style={{ padding: '10px' }}>
-          {title}
-          <button onClick={this.props.delEmp.bind(this, id)} style={btnStyle}>
-            X
-          </button>
-        </p>
+      <div>
+        <Card>
+          <CardBody>
+            <CardTitle>{title}</CardTitle>
+            <Button color='danger' onClick={this.props.delEmp.bind(this, id)}>
+              X
+            </Button>
+          </CardBody>
+        </Card>
       </div>
     )
   }
@@ -20,21 +22,6 @@ export class EmpItem extends Component {
 //PropTypes
 EmpItem.propTypes = {
   empItem: PropTypes.object.isRequired
-}
-
-const itemStyle = {
-  backgroundColor: '#f4f4f4',
-  padding: '20px'
-}
-
-const btnStyle = {
-  background: '#ff0000',
-  color: '#fff',
-  border: 'none',
-  padding: '5px 9px',
-  borderRadius: '50%',
-  cursor: 'pointer',
-  float: 'right'
 }
 
 export default EmpItem

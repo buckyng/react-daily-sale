@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/layout/Header'
 import EmpList from './components/EmpList'
 import AddEmp from './components/AddEmp'
-import About from './components/pages/About'
+import SaleInput from './components/pages/SaleInput'
 import uuid from 'uuid'
 
 import './App.css'
@@ -12,18 +12,15 @@ class App extends Component {
     empList: [
       {
         title: 'Kathy',
-        id: uuid.v4(),
-        input: ''
+        id: uuid.v4()
       },
       {
         title: 'Triz',
-        id: uuid.v4(),
-        input: ''
+        id: uuid.v4()
       },
       {
         title: 'Eva',
-        id: uuid.v4(),
-        input: ''
+        id: uuid.v4()
       }
     ]
   }
@@ -58,7 +55,7 @@ class App extends Component {
                 </React.Fragment>
               )}
             />
-            <Route path='/about' component={About} />
+            <Route path='/saleinput' component={SaleInput} />
           </div>
         </div>
       </Router>
