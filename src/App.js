@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/layout/Header'
-import EmpInputs from './components/EmpInputs'
-import AddTodo from './components/AddTodo'
+import EmpList from './components/EmpList'
+import AddEmp from './components/AddEmp'
 import About from './components/pages/About'
 import uuid from 'uuid'
 
 import './App.css'
 class App extends Component {
   state = {
-    empInputs: [
+    empList: [
       {
         title: 'Kathy',
         id: uuid.v4(),
@@ -28,20 +28,18 @@ class App extends Component {
     ]
   }
   //delete Todo
-  delTodo = id => {
+  delEmp = id => {
     this.setState({
-      empInputs: [
-        ...this.state.empInputs.filter(empInputItem => empInputItem.id !== id)
-      ]
+      empList: [...this.state.empList.filter(empItem => empItem.id !== id)]
     })
   }
   //add Todo
-  addTodo = title => {
-    const newTodo = {
+  addEmp = title => {
+    const newEmp = {
       id: uuid.v4(),
       title
     }
-    this.setState({ empInputs: [...this.state.empInputs, newTodo] })
+    this.setState({ empList: [...this.state.empList, newEmp] })
   }
 
   render() {
@@ -55,11 +53,8 @@ class App extends Component {
               path='/'
               render={props => (
                 <React.Fragment>
-                  <AddTodo addTodo={this.addTodo} />
-                  <EmpInputs
-                    empInputs={this.state.empInputs}
-                    delTodo={this.delTodo}
-                  />
+                  <AddEmp addEmp={this.addEmp} />
+                  <EmpList empList={this.state.empList} delEmp={this.delEmp} />
                 </React.Fragment>
               )}
             />

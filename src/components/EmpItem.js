@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export class EmpInputItem extends Component {
+export class EmpItem extends Component {
   render() {
     const { id, title } = this.props.empInput
     return (
       <div style={itemStyle}>
         <p style={{ padding: '10px' }}>
           {title}
-          <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>
+          <button onClick={this.props.delEmp.bind(this, id)} style={btnStyle}>
             X
           </button>
         </p>
@@ -18,12 +18,13 @@ export class EmpInputItem extends Component {
 }
 
 //PropTypes
-EmpInputItem.propTypes = {
+EmpItem.propTypes = {
   empInput: PropTypes.object.isRequired
 }
 
 const itemStyle = {
-  backgroundColor: '#f4f4f4'
+  backgroundColor: '#f4f4f4',
+  padding: '20px'
 }
 
 const btnStyle = {
@@ -36,4 +37,4 @@ const btnStyle = {
   float: 'right'
 }
 
-export default EmpInputItem
+export default EmpItem
