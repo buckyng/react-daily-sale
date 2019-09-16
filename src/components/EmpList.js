@@ -4,12 +4,8 @@ import PropTypes from 'prop-types'
 
 class EmpList extends Component {
   render() {
-    return this.props.empList.map(empInput => (
-      <EmpItem
-        key={empInput.id}
-        empInput={empInput}
-        delEmp={this.props.delEmp}
-      />
+    return this.props.empList.map(empItem => (
+      <EmpItem key={empItem.id} empItem={empItem} delEmp={this.props.delEmp} />
     ))
   }
 }

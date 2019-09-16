@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export class EmpItem extends Component {
   render() {
-    const { id, title } = this.props.empInput
+    const { id, title } = this.props.empItem
     return (
       <div style={itemStyle}>
         <p style={{ padding: '10px' }}>
@@ -19,7 +19,7 @@ export class EmpItem extends Component {
 
 //PropTypes
 EmpItem.propTypes = {
-  empInput: PropTypes.object.isRequired
+  empItem: PropTypes.object.isRequired
 }
 
 const itemStyle = {
